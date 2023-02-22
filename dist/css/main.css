@@ -22,6 +22,10 @@
   font-family: 'Montserrat Thin';
   src: url("fonts/Montserrat-Thin.ttf") format('truetype');
 }
+@font-face {
+  font-family: 'Arimo';
+  src: url("fonts/Arimo.ttf") format('truetype');
+}
 header .navbar {
   display: flex;
   font-size: 1rem;
@@ -40,6 +44,7 @@ header .navbar ul li {
   display: inline-block;
 }
 header .navbar ul li a {
+  font-size: 1rem;
   text-transform: uppercase;
   text-decoration: none;
   font-family: 'Montserrat Bold', sans-serif;
@@ -57,6 +62,7 @@ header .navbar .logo img {
   width: 40px;
 }
 header .navbar .logo img:hover {
+  transition: all 0.3s ease;
   opacity: 0.6;
   cursor: pointer;
 }
@@ -100,7 +106,7 @@ footer .sponsors div img {
   object-fit: contain;
   max-width: 100%;
 }
-footer .info {
+footer .info p {
   font-size: 10px;
 }
 footer .info #footer_logo {
@@ -134,14 +140,11 @@ main.index section {
   display: flex;
   align-items: center;
   justify-content: center;
-  widht: 100vw;
-  height: 100vh;
   overflow: hidden;
 }
 main.index .banner {
   color: #fff;
   position: relative;
-  height: 90vh;
   overflow: hidden;
 }
 main.index .banner .c {
@@ -211,10 +214,112 @@ main.index .banner .back {
   width: 100%;
   background-color: #3c3562;
 }
+main.index section.info {
+  background-color: #3c3562;
+}
+main.index section.info .wrapper {
+  padding: 5% 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  gap: 60px;
+}
+main.index section.info .wrapper h1.title {
+  width: 80%;
+}
+main.index section.info .wrapper p {
+  width: 80%;
+}
+main.index section.info .wrapper .outlined-button {
+  align-self: flex-start;
+}
+@media (max-width: 600px) {
+  section.info .wrapper h1.title {
+    min-width: 100%;
+  }
+  section.info .wrapper p {
+    min-width: 100%;
+  }
+}
 @media (max-width: 1000px) {
   .index .banner__sponsors {
     opacity: 0;
   }
+}
+section.contacts {
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10vh;
+  gap: 60px;
+}
+section.contacts .social {
+  display: flex;
+  gap: 60px;
+}
+section.contacts .social a {
+  display: block;
+  height: 40px;
+  width: 40px;
+  background-size: 40px;
+  -webkit-text-decoration: 0;
+  text-decoration: 0;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+section.contacts .social a:active {
+  background-color: #656565;
+}
+section.contacts .social div {
+  heigth: 40px;
+  width: 40px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+section.contacts .social div:not(:last-child):after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: -40px;
+  width: 20px;
+  height: 2px;
+  background: #656565;
+  margin-left: 10px;
+}
+section.contacts .social .telegram {
+  -webkit-mask-image: url("../img/socials/telegram.svg");
+  mask-image: url("../img/socials/telegram.svg");
+}
+section.contacts .social .telegram:hover {
+  background-color: #26a5e4;
+}
+section.contacts .social .youtube {
+  -webkit-mask-image: url("../img/socials/youtube.svg");
+  mask-image: url("../img/socials/youtube.svg");
+}
+section.contacts .social .youtube:hover {
+  background-color: #f00;
+}
+section.contacts .social .instagram {
+  -webkit-mask-image: url("../img/socials/instagram.svg");
+  mask-image: url("../img/socials/instagram.svg");
+}
+section.contacts .social .instagram:hover {
+  background-color: #e4405f;
+}
+section.contacts .social .facebook {
+  -webkit-mask-image: url("../img/socials/facebook.svg");
+  mask-image: url("../img/socials/facebook.svg");
+}
+section.contacts .social .facebook:hover {
+  background-color: #1877f2;
 }
 hr {
   border: none;
@@ -228,6 +333,59 @@ hr {
 }
 html,
 body {
+  color: #fff;
   background: #272b37;
   font-family: 'Montserrat Regular', sans-serif;
+}
+h1.title {
+  font-size: 5rem;
+  font-family: 'Montserrat Bold', sans-serif;
+  text-transform: uppercase;
+}
+p,
+a {
+  font-size: 2rem;
+}
+a {
+  color: #fff;
+  font-family: 'Montserrat Bold', sans-serif;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+a:hover {
+  color: #000;
+}
+.outlined-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 30px 40px;
+  border: solid #fff 4px;
+}
+.outlined-button__text {
+  display: inline-block;
+  margin-right: 20px;
+  line-height: 0.8;
+}
+.outlined-button__arrow {
+  display: inline-block;
+  font-size: 20px;
+  line-height: 0.6;
+}
+.outlined-button:hover {
+  background: #fff;
+  color: #3c3562;
+}
+@media (max-width: 600px) {
+  .outlined-button {
+    width: 100%;
+    font-size: 5vw;
+  }
+}
+@media (max-width: 1000px) {
+  h1.title {
+    font-size: 8vw;
+  }
 }

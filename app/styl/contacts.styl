@@ -1,0 +1,57 @@
+
+section.contacts
+	background black
+	display flex
+	flex-direction column
+	justify-content center
+	align-items center
+	padding 10vh 
+	gap 60px
+	.social
+		display flex
+		gap 60px
+		a
+			display block
+			height 40px
+			width 40px
+			background-size 40px
+			text-decoration 0 
+			background-color white
+			background-repeat no-repeat
+			mask-repeat no-repeat
+			&:active
+				background-color $text-primary-color
+		div
+			heigth 40px
+			width 40px
+			position relative
+			transition all .3s ease
+		div:not(:last-child)
+			&:after
+				content ""
+				display block
+				position absolute
+				top 50%
+				right -40px
+				width 20px
+				height 2px
+				background $text-primary-color
+				margin-left 10px
+		//- here can add new social
+		.telegram
+			mask-image url('../img/socials/telegram.svg')
+			&:hover
+				background-color #26A5E4
+		.youtube
+			mask-image url('../img/socials/youtube.svg')
+			&:hover
+				background-color #FF0000
+		.instagram
+			mask-image url('../img/socials/instagram.svg')
+			&:hover
+				background-color #E4405F 
+		.facebook
+			mask-image url('../img/socials/facebook.svg')
+			&:hover
+				background-color #1877F2		
+		

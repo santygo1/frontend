@@ -1,0 +1,29 @@
+-var SOCIALS_DEFAULT_PATH = 'img/socials/'
+
+//- socials
+//- here can change social
+-
+	var socials = [
+			{
+				style_class: 'instagram',
+				href: '#isntagram'
+			},
+			{
+				style_class: 'facebook',
+				href: '#facebook'
+			},
+			{
+				style_class: 'youtube',
+				href: '#youtube'
+			},
+			{
+				style_class: 'telegram',
+				href: '#telegram'
+			}
+			]
+
+section.contacts
+	h1.title Присоединяйся!
+	.social
+		each item in socials
+			div: a(class=item.style_class href=item.href)

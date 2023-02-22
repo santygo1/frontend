@@ -3,14 +3,11 @@ main.index
 		display flex
 		align-items center
 		justify-content center
-		widht 100vw
-		height 100vh
 		overflow hidden
 	
 	.banner
 		color: white
 		position relative
-		height 90vh
 		overflow hidden
 		.c
 			display inline-block
@@ -70,10 +67,39 @@ main.index
 			z-index 1
 			top 50%
 			width 100%
-			background-color #3c3562
+			background-color $purple-block
+	
+	section.info
+		background-color $purple-block
+		.wrapper
+			padding 5% 5%
+			display flex
+			flex-direction column
+			justify-content space-between
+			width 100%
+			height 100%
+			gap 60px
+			
+			h1.title
+				width 80%
+			p
+				width 80%
+				
+			.outlined-button
+				align-self flex-start
 
+
+@media(max-width: 600px)
+	section.info
+		.wrapper
+			h1.title
+				min-width 100%
+			p
+				min-width 100%
+				
 @media(max-width: 1000px)
 	.index
+		//- delete sponsors when screen width < 1000 
 		.banner
 			&__sponsors
 				opacity 0
