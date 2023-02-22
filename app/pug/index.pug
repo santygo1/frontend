@@ -1,1 +1,18 @@
 extends includes/basis.pug
+append page-config
+	- var title = 'Главная'
+
+block content
+	main.index
+		section.banner
+			.back
+			.banner__wrapper
+				.c
+					.banner__text
+						h1.team SK Gaming
+						h3.game Counter Strike: Global Offensive
+				.banner__sponsors
+					.wrapper
+						div: img(src='img/sponsors/visa.png')
+						div: img(src='img/sponsors/razer.png')
+						div: img(src='img/sponsors/hyperx.png')
