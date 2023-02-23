@@ -1,8 +1,4 @@
 @font-face {
-  font-family: 'Montserrat Black';
-  src: url("fonts/Montserrat-Black.ttf") format('truetype');
-}
-@font-face {
   font-family: 'Montserrat Bold';
   src: url("fonts/Montserrat-Bold.ttf") format('truetype');
 }
@@ -11,20 +7,8 @@
   src: url("fonts/Montserrat-Light.ttf") format('truetype');
 }
 @font-face {
-  font-family: 'Montserrat Medium';
-  src: url("fonts/Montserrat-Medium.ttf") format('truetype');
-}
-@font-face {
   font-family: 'Montserrat Regular';
   src: url("fonts/Montserrat-Regular.ttf") format('truetype');
-}
-@font-face {
-  font-family: 'Montserrat Thin';
-  src: url("fonts/Montserrat-Thin.ttf") format('truetype');
-}
-@font-face {
-  font-family: 'Arimo';
-  src: url("fonts/Arimo.ttf") format('truetype');
 }
 header .navbar {
   display: flex;
@@ -66,7 +50,7 @@ header .navbar .logo img:hover {
   opacity: 0.6;
   cursor: pointer;
 }
-@media (max-width: 600px) {
+@media (max-width: 720px) {
   header .navbar {
     padding: 10px;
     flex-direction: column;
@@ -118,7 +102,7 @@ footer .author {
   font-size: 10px;
   color: #fff;
 }
-@media (max-width: 600px) {
+@media (max-width: 720px) {
   footer {
     gap: 0;
   }
@@ -177,9 +161,10 @@ main.index .banner__text .team {
   display: inline-block;
   font-size: calc(6vh + 8vw);
   text-transform: uppercase;
+  font-family: 'Montserrat Bold', sans-serif;
   background-color: #000;
   padding: 20px 10px 0 20px;
-  line-height: 0.74;
+  line-height: 0.7;
 }
 main.index .banner__text .game {
   font-size: 7vh;
@@ -232,10 +217,7 @@ main.index section.info .wrapper h1.title {
 main.index section.info .wrapper p {
   width: 80%;
 }
-main.index section.info .wrapper .outlined-button {
-  align-self: flex-start;
-}
-@media (max-width: 600px) {
+@media (max-width: 720px) {
   section.info .wrapper h1.title {
     min-width: 100%;
   }
@@ -321,6 +303,98 @@ section.contacts .social .facebook {
 section.contacts .social .facebook:hover {
   background-color: #1877f2;
 }
+main.about > section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  padding: 5%;
+  justify-content: center;
+}
+main.about > section img {
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+main.about section.start p.info {
+  display: block;
+  font-size: 2rem;
+  width: 80%;
+}
+main.about section.start img {
+  height: 40vh;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: 50% 15%;
+  object-position: 50% 15%;
+}
+main.about section.history {
+  background: #3c3562;
+}
+main.about section.history p.info {
+  font-size: 2rem;
+  weidth: 100%;
+}
+main.about section.team table.team {
+  border-spacing: 4px;
+}
+main.about section.team table.team th,
+main.about section.team table.team td {
+  font-size: 2rem;
+  border: solid 2px #fff;
+  text-align: center;
+  padding: 20px 5px;
+}
+main.about section.team table.team th img,
+main.about section.team table.team td img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+main.about section.achivments {
+  background-color: #000;
+}
+main.about section.achivments ul {
+  margin: 0 4%;
+}
+main.about section.achivments ul :not(:first-child) {
+  margin-top: 14px;
+}
+main.about section.achivments ul * {
+  font-family: 'Montserrat Bold', sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+}
+main.about section.achivments ul .first {
+  color: #ffd639;
+}
+main.about section.achivments ul .second {
+  color: #96a1a7;
+}
+main.about section.achivments ul .third {
+  color: #f60;
+}
+@media (max-width: 720px) {
+  .hidden {
+    display: none;
+  }
+  main.about section.start p.info,
+  main.about section.team p.info {
+    font-size: 3vh;
+    width: 100%;
+  }
+  main.about section.history p.info {
+    font-size: 2.5vh;
+  }
+}
+@media (max-width: 1200px) {
+  main.about section.achivments ul * {
+    font-size: 2.8vw;
+  }
+  main.about section.team table.team th,
+  main.about section.team table.team td {
+    font-size: 2.5vw;
+  }
+}
 hr {
   border: none;
   background-color: #656565;
@@ -355,6 +429,9 @@ a {
 a:hover {
   color: #000;
 }
+p.caption {
+  font-size: 1.5rem;
+}
 .outlined-button {
   display: flex;
   justify-content: center;
@@ -362,6 +439,7 @@ a:hover {
   text-transform: uppercase;
   text-decoration: none;
   padding: 30px 40px;
+  align-self: flex-start;
   border: solid #fff 4px;
 }
 .outlined-button__text {
@@ -378,7 +456,7 @@ a:hover {
   background: #fff;
   color: #3c3562;
 }
-@media (max-width: 600px) {
+@media (max-width: 720px) {
   .outlined-button {
     width: 100%;
     font-size: 5vw;

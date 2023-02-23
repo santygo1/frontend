@@ -1,0 +1,88 @@
+-
+	var achivments = [
+			{
+				rank: 2,
+				tournament: 'Subaru Invitational 2017',
+				prize:'$5 000'
+			},
+			{
+				rank: 1,
+				tournament: 'Intel Extreme Master XII',
+				prize:'$100 000'
+			},
+			{
+				rank: 1,
+				tournament: 'cs_summit',
+				prize:'$63 750'
+			},
+			{
+				rank: 2,
+				tournament: 'DreamHack Masters Las Vegas 2017',
+				prize:'$100 000'
+			},
+			{
+				rank: 3,
+				tournament: 'The ELEAGUE Major 2017',
+				prize:'$70 000'
+			},
+			{
+				rank: 3,
+				tournament: 'EPICENTER: Moscow',
+				prize:'$40 000'
+			},
+			{
+				rank: 3,
+				tournament: 'Esports Championship Series Season 2',
+				prize:'$65 000'
+			},
+			{
+				rank: 3,
+				tournament: 'ELEAGUE Season 2',
+				prize:'$60 000'
+			},
+			{
+				rank: 2,
+				tournament: 'Intel Extreme Master Season XI Oakland',
+				prize:'$53 000'
+			},
+			{
+				rank: 2,
+				tournament: 'ESL One New York 2016',
+				prize:'$25 000'
+			},
+			{
+				rank: 3,
+				tournament: 'ESL One New York 2016',
+				prize:'$25 000'
+			},
+			{
+				rank: 3,
+				tournament: 'iBUYPOWER Invitational 2016',
+				prize:'$1000'
+			},
+		]
+
+//- В зависимости от того какой ранг
+//- ставит соответсвущий класс
+mixin create_achivment(achivment)
+	- var rank_class = ''
+	case achivment.rank
+		when 1
+			- rank_class = 'first'
+		when 2
+			- rank_class = 'second'
+		when 3 
+			- rank_class = 'third'
+		default
+			- rank_class = ''
+	li 
+		p
+			span(class=rank_class) #{achivment.rank} место 
+			| - #{achivment.tournament}
+			| - #{achivment.prize};
+
+
+mixin create_ahcivments()
+	ul
+		each achivment in achivments
+			+create_achivment(achivment)

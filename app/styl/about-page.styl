@@ -1,0 +1,71 @@
+main.about > section
+	block()
+
+main.about
+	section.start
+		p.info
+			display block
+			font-size 2rem
+			width 80%
+		img
+			height 40vh
+			object-fit cover
+			object-position 50% 15%
+	section.history
+		background $purple-block
+		p.info
+			font-size 2rem
+			weidth 100%
+	section.team
+		table.team
+			border-spacing 4px
+			th
+			td
+				font-size 2rem
+				border solid 2px $text-color
+				text-align center
+				padding 20px 5px 
+				img 
+					width: 50px
+					height: 50px
+					border-radius 50%
+	section.achivments
+		background-color $black-block
+		ul	
+			margin 0 4%
+			:not(:first-child)
+				margin-top 14px
+			* 
+				font-family 'Montserrat Bold', sans-serif
+				font-weight bold
+				font-size 2rem
+			.first
+				color $gold
+			.second
+				color $silver
+			.third
+				color $bronze
+
+@media(max-width: 720px)
+	.hidden
+		display none
+	main.about
+		section.start
+		section.team
+			p.info
+				font-size 3vh
+				width 100%
+		section.history
+			p.info
+				font-size 2.5vh
+@media(max-width: 1200px)
+	main.about
+		section.achivments
+			ul
+				*
+					font-size 2.8vw
+		section.team
+			table.team
+				th
+				td
+					font-size 2.5vw
