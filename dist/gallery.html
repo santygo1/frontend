@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no">
+    <title>Фото </title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo"><a href="."><img src="img/logo.png"></a></div>
+        <ul>
+          <li><a href="#">Команда</a></li>
+          <li><a href="#">Матчи</a></li>
+          <li><a href="gallery.html">Фото</a></li>
+          <li><a href="about.html">О клубе</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="gallery">
+      <section class="slider">
+        <div class="wrapper">
+          <div class="slider-container">
+                    <div class="slide fade">
+                      <div class="numbertext">1/4</div><img src="img/gallery/1.jpg">
+                    </div>
+                    <div class="slide fade">
+                      <div class="numbertext">2/4</div><img src="img/gallery/2.jpg">
+                    </div>
+                    <div class="slide fade">
+                      <div class="numbertext">3/4</div><img src="img/gallery/7.jpg">
+                    </div>
+                    <div class="slide fade">
+                      <div class="numbertext">4/4</div><img src="img/gallery/6.jpg">
+                    </div>
+            <div class="img_wrapper"></div><a class="prev" onClick="plusSlides(-1)">&#10094;</a><a class="next" onClick="plusSlides(1)">&#10095;</a>
+            <div class="dot-dock" style="text-align:center"><span class="dot" onClick="currentSlide(1)"></span><span class="dot" onClick="currentSlide(2)"></span><span class="dot" onClick="currentSlide(3)"></span><span class="dot" onClick="currentSlide(4)"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="gallery">
+        <h1 class="title">Галерея</h1>
+        <div class="gallery__wrapper"><img src="img/gallery/1.jpg"><img src="img/gallery/2.jpg"><img src="img/gallery/3.jpg"><img src="img/gallery/4.jpg"><img src="img/gallery/5.jpg"><img src="img/gallery/6.jpg"><img src="img/gallery/7.jpg">
+        </div><a class="outlined-button" href="#">
+          <div class="outlined-button__text">Показать больше</div></a>
+      </section>
+      <section class="contacts">
+        <h1 class="title">Присоединяйся!</h1>
+        <div class="social">
+          <div><a class="instagram" href="#isntagram"></a></div>
+          <div><a class="facebook" href="#facebook"></a></div>
+          <div><a class="youtube" href="#youtube"></a></div>
+          <div><a class="telegram" href="#telegram"></a></div>
+        </div>
+      </section>
+      <script src="js/slider.js"></script>
+    </main>
+    <hr>
+    <footer>
+      <div class="sponsors">
+        <div><img src="img/sponsors/visa.png"></div>
+        <div><img src="img/sponsors/razer.png"></div>
+        <div><img src="img/sponsors/hyperx.png"></div>
+      </div>
+      <div class="info"><img class="logo" id="footer_logo" src="img/logo.png">
+        <p>
+          SK Gaming 2013-2023©
+          <br>
+          Запрещено для детей младше 18.
+        </p>
+      </div>
+      <p class="author">Design by <b><i>Danil Spirin</i></b>
+        <br>
+        2023
+      </p>
+    </footer>
+  </body>
+</html>

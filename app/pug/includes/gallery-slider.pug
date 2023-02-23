@@ -1,0 +1,35 @@
+-
+	var slides = [
+			{
+				img: 'img/gallery/1.jpg'
+			},
+			{
+				img: 'img/gallery/2.jpg'
+			},
+			{
+				img: 'img/gallery/7.jpg'
+			},
+			{
+				img: 'img/gallery/6.jpg'
+			}
+		]
+
+mixin slide(slide_number, slides_count, slide_img)
+	.slide.fade
+		.numbertext #{slide_number}/#{slides_count}
+		img(src=slide_img)
+.wrapper
+	.slider-container
+		each slide, index in slides
+			+slide(index+1, slides.length, slide.img)
+		div.img_wrapper
+		//- prev and next button
+		a.prev(onClick="plusSlides(-1)") &#10094;
+		a.next(onClick="plusSlides(1)") &#10095;
+		//- circles	
+		div.dot-dock(style="text-align:center")
+			each slide, index in slides
+				span.dot(onClick="currentSlide("+(index+1)+")")
+
+
+

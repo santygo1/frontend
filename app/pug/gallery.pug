@@ -1,0 +1,23 @@
+extends includes/basis
+append page-config
+	- var title = 'Фото'
+
+block content
+	- var GALLERY_PATH = 'img/gallery/'
+	- var PHOTO_COUNT = 8
+
+	main.gallery
+		section.slider
+			include includes/gallery-slider
+		section.gallery
+			h1.title Галерея
+			.gallery__wrapper
+				//- add page 
+				- var current_photo_index = 1 
+				while current_photo_index < PHOTO_COUNT
+					img(src=GALLERY_PATH + current_photo_index + '.jpg')
+					-current_photo_index++
+			a.outlined-button(href="#") #[.outlined-button__text Показать больше]
+
+		include includes/contacts-block
+		script(src="js/slider.js")
