@@ -3,3 +3,10 @@ append page-config
 	- var title = 'Фото'
 
 block content
+	main.gallery
+		section.slider
+			include includes/gallery-slider
+		section.gallery
+			h1.title Галерея
+		include includes/contacts-block
+		script(src="js/slider.js")

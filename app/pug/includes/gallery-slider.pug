@@ -7,28 +7,29 @@
 				img: 'img/gallery/2.jpg'
 			},
 			{
-				img: 'img/gallery/4.webp'
+				img: 'img/gallery/7.jpg'
 			},
 			{
-				img: 'img/gallery/5.webp'
+				img: 'img/gallery/9.png'
 			}
 		]
 
 mixin slide(slide_number, slides_count, slide_img)
 	.slide.fade
 		.numbertext #{slide_number}/#{slides_count}
-		img(src=slide_img style="width:100%")
+		img(src=slide_img)
 .wrapper
 	.slider-container
 		each slide, index in slides
 			+slide(index+1, slides.length, slide.img)
+		div.img_wrapper
 		//- prev and next button
 		a.prev(onClick="plusSlides(-1)") &#10094;
 		a.next(onClick="plusSlides(1)") &#10095;
-	//- circles	
-	div(style="text-align:center")
-		each slide, index in slides
-			span.dot(onClick="currentSlide("+index+1+")")
+		//- circles	
+		div.dot-dock(style="text-align:center")
+			each slide, index in slides
+				span.dot(onClick="currentSlide("+(index+1)+")")
 
 
 
