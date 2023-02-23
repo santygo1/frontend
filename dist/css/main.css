@@ -504,6 +504,30 @@ main.gallery section.slider {
 main.gallery section.slider .wrapper {
   padding: 5%;
 }
+main.gallery section.gallery .gallery__wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+main.gallery section.gallery .gallery__wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+main.gallery section.gallery .gallery__wrapper img:first-child {
+  grid-column: 1/3;
+  grid-row: 1/4;
+}
+main.gallery section.gallery .outlined-button {
+  align-self: center;
+  margin: 40px 0;
+}
+@media (max-width: 700px) {
+  main.gallery section.gallery .gallery__wrapper {
+    grid-template-columns: 1fr;
+  }
+}
 hr {
   border: none;
   background-color: #656565;
