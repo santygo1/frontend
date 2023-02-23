@@ -1,21 +1,25 @@
-//- colors
-//-TODO: (ref) incapsulate in the general colors class and import in any class which need it  
-$text-primary-color = #656565
-$purple-block = #3c3562
-$separator-color = #656565
-$primary-color = #272b37
-$text-color = white
-
-//- imports
+//- import utils
+@import colors
 @import fonts
 
+tr()
+	transition all .3s ease
+	
+block()
+	display flex
+	flex-direction column 
+	gap 30px
+	width 100%
+	padding 5%
+	justify-content center
+	img 
+		object-fit cover
+//- import styles
 @import header
 @import footer
 @import index-page
 @import contacts
-
-tr()
-	transition all .3s ease
+@import about-page
 
 //- separator
 hr
@@ -50,6 +54,9 @@ a
 	tr()
 	&:hover
 		color: black
+
+p.caption
+	font-size 1.5rem
 	
 .outlined-button
 	display flex
@@ -58,6 +65,7 @@ a
 	text-transform uppercase
 	text-decoration none
 	padding 30px 40px
+	align-self flex-start
 	border solid $text-color 4px
 	&__text
 		display inline-block
@@ -70,14 +78,12 @@ a
 	&:hover
 		background $text-color
 		color $purple-block
-		
 
-
-@media(max-width 600px)
+@media(max-width: 720px)
 	.outlined-button
 		width 100%
 		font-size 5vw
 
-@media(max-width 1000px)
+@media(max-width: 1000px)
 	h1.title
 		font-size 8vw
