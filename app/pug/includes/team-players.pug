@@ -1,0 +1,144 @@
+-
+	const ROLE_IMAGES = {
+		'Снайпер':'img/roles/sniper.webp',
+		'Капитан':'img/roles/captain.webp',
+		'Фраггер':'img/roles/fragger.webp',
+		'Люркер':'img/roles/lurker.webp',
+		'Саппорт':'img/roles/support.webp'
+		}
+
+-
+	var players = [
+			{
+				country_img: 'img/countries/brazil.png',
+				role: 'Капитан',
+				name:'Габриэль',
+				nickname: 'FalleN',
+				surname: 'Толедо',
+				age: '27',
+				kd_rat: '1.07',
+				headshots_koef: '44.0',
+				maps_played: '67',
+				link:'#fallen',
+
+				//-social links
+				links: {
+					facebook: '#fallen_facebook',
+					twitter: '#fallen_twitter',
+					twitch: '#fallen_twitch'
+				}
+			},
+			{
+				country_img: 'img/countries/brazil.png',
+				role: 'Снайпер',
+				name:'Фернандо',
+				nickname: 'fer',
+				surname: 'Альваренга',
+				age: '25',
+				kd_rat: '1.18',
+				headshots_koef: '44.0',
+				maps_played: '66',
+				link:'#fer',
+				
+				//-social links
+				links: {
+					twitter: '#fer_twitter',
+					twitch: '#fer_twitch'
+				}
+			},
+			{
+				country_img: 'img/countries/brazil.png',
+				role: 'Фраггер',
+				name:'Марсело',
+				nickname: 'coldzera',
+				surname: 'Давид',
+				age: '22',
+				kd_rat: '1.29',
+				headshots_koef: '47.8',
+				maps_played: '66',
+				link:'#coldzera',
+
+				//-social links
+				links: {
+					facebook: '#coldzera_facebook',
+					twitter: '#coldzera_twitter',
+					twitch: '#coldzera_twitch'
+				}
+			},
+			{
+				country_img: 'img/countries/brazil.png',
+				role: 'Люркер',
+				name:'Эпитасио',
+				nickname: 'TACO',
+				surname: 'де Мело',
+				age: '22',
+				kd_rat: '0.94',
+				headshots_koef: '45.1',
+				maps_played: '66',
+				link:'#taco',
+
+				//-social links
+				links: {
+					facebook: '#taco_facebook',
+					twitter: '#taco_twitter'
+				}
+			},
+			{
+				country_img: 'img/countries/brazil.png',
+				role: 'Саппорт',
+				name:'Жоао',
+				nickname: 'felps',
+				surname: 'Васконселлос',
+				age: '20',
+				kd_rat: '1.07',
+				headshots_koef: '45.6',
+				maps_played: '66',
+				link:'#felps',
+
+				//-social links
+				links: {
+					facebook: '#felps_facebook',
+					twitter: '#felps_twitter',
+					twitch: '#felps_twitch'
+				}
+			}
+			]
+
+mixin create_player_row(player)
+	tr.player
+		td.hidden: img.country(src=player.country_img)
+		td #{player.name} «#{player.nickname}» #{player.surname}
+		td.hidden #{player.age}
+		td #{player.kd_rat}
+		td #{player.headshots_koef}
+		td #{player.maps_played}
+
+mixin create_players_table()
+	table.team
+		tr.head
+			th.hidden Страна
+			th Игрок
+			th.hidden Возраст
+			th K/D-рейтинг
+			th Хедшоты
+			th Сыграно карт
+		each item in players
+			+create_player_row(item)
+
+mixin create_player_card(player)
+	.player-card
+		img.player-card__role-img(src=ROLE_IMAGES[player.role])
+		.player-card__info
+			p.name #{player.name} 
+			p.surname #{player.surname}
+			br
+			p.nickname #{player.nickname}
+			p.role #{player.role}
+		.socials
+			each val, key in player.links
+				div: a(class=key href=val) 
+
+mixin create_player_cards_list()
+	.card-list
+		each player in players
+			+create_player_card(player)

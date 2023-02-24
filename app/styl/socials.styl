@@ -1,0 +1,21 @@
+
+//- pictures from https://simpleicons.org/
+SOCIALS_PATH = 'https://simpleicons.org/icons/'
+
+addSocial(social, color)
+	a.{social}
+		mask-image url(SOCIALS_PATH + social + '.svg')
+	a.{social}:hover
+		background-color: color
+
+//- here can add new social
+*
+main.team .socials
+section.contacts
+	addSocial(telegram, #26A5E4)
+	addSocial(youtube, #FF0000)
+	addSocial(instagram, #E4405F)
+	addSocial(twitter, #1DA1F2)
+	addSocial(twitch, #9146FF)
+	addSocial(facebook, #1877F2)
+	addSocial(odnoklassniki, #EE8208)

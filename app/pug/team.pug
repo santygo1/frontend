@@ -3,3 +3,17 @@ append page-config
 	- var  title = 'Команда'
 
 block content
+	include includes/team-players
+
+	main.team
+		section.info
+			h1.title Counter Strike: Global Offensive
+			p.
+				#[b SK Gaming] - одна из самых известных организаций во всем мире.
+				Она имела популярность еще задолго до того, как в свет вышла Counter Strike: Global Offensive.
+				Эта организация появилась еще в 2013 году. Она начинала попытки возрождения старых составов.
+				К сожалению, эта затея не увенчалась успехом. Им пришлось свою стратегию и наконец они нашли 
+				достойный состав в 2016 году. В то время они подписали 5 игроков из Бразилии.
+		section.team
+			+create_player_cards_list()
+	include includes/contacts-block

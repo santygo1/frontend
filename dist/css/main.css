@@ -10,6 +10,83 @@
   font-family: 'Montserrat Regular';
   src: url("fonts/Montserrat-Regular.ttf") format('truetype');
 }
+* a.telegram,
+main.team .socials a.telegram,
+section.contacts a.telegram {
+  -webkit-mask-image: url("https://simpleicons.org/icons/telegram.svg");
+  mask-image: url("https://simpleicons.org/icons/telegram.svg");
+}
+* a.telegram:hover,
+main.team .socials a.telegram:hover,
+section.contacts a.telegram:hover {
+  background-color: #26a5e4;
+}
+* a.youtube,
+main.team .socials a.youtube,
+section.contacts a.youtube {
+  -webkit-mask-image: url("https://simpleicons.org/icons/youtube.svg");
+  mask-image: url("https://simpleicons.org/icons/youtube.svg");
+}
+* a.youtube:hover,
+main.team .socials a.youtube:hover,
+section.contacts a.youtube:hover {
+  background-color: #f00;
+}
+* a.instagram,
+main.team .socials a.instagram,
+section.contacts a.instagram {
+  -webkit-mask-image: url("https://simpleicons.org/icons/instagram.svg");
+  mask-image: url("https://simpleicons.org/icons/instagram.svg");
+}
+* a.instagram:hover,
+main.team .socials a.instagram:hover,
+section.contacts a.instagram:hover {
+  background-color: #e4405f;
+}
+* a.twitter,
+main.team .socials a.twitter,
+section.contacts a.twitter {
+  -webkit-mask-image: url("https://simpleicons.org/icons/twitter.svg");
+  mask-image: url("https://simpleicons.org/icons/twitter.svg");
+}
+* a.twitter:hover,
+main.team .socials a.twitter:hover,
+section.contacts a.twitter:hover {
+  background-color: #1da1f2;
+}
+* a.twitch,
+main.team .socials a.twitch,
+section.contacts a.twitch {
+  -webkit-mask-image: url("https://simpleicons.org/icons/twitch.svg");
+  mask-image: url("https://simpleicons.org/icons/twitch.svg");
+}
+* a.twitch:hover,
+main.team .socials a.twitch:hover,
+section.contacts a.twitch:hover {
+  background-color: #9146ff;
+}
+* a.facebook,
+main.team .socials a.facebook,
+section.contacts a.facebook {
+  -webkit-mask-image: url("https://simpleicons.org/icons/facebook.svg");
+  mask-image: url("https://simpleicons.org/icons/facebook.svg");
+}
+* a.facebook:hover,
+main.team .socials a.facebook:hover,
+section.contacts a.facebook:hover {
+  background-color: #1877f2;
+}
+* a.odnoklassniki,
+main.team .socials a.odnoklassniki,
+section.contacts a.odnoklassniki {
+  -webkit-mask-image: url("https://simpleicons.org/icons/odnoklassniki.svg");
+  mask-image: url("https://simpleicons.org/icons/odnoklassniki.svg");
+}
+* a.odnoklassniki:hover,
+main.team .socials a.odnoklassniki:hover,
+section.contacts a.odnoklassniki:hover {
+  background-color: #ee8208;
+}
 .slider-container {
   max-width: 100%;
   position: relative;
@@ -154,34 +231,6 @@ section.contacts .social div:not(:last-child):after {
   height: 2px;
   background: #656565;
   margin-left: 10px;
-}
-section.contacts .social .telegram {
-  -webkit-mask-image: url("../img/socials/telegram.svg");
-  mask-image: url("../img/socials/telegram.svg");
-}
-section.contacts .social .telegram:hover {
-  background-color: #26a5e4;
-}
-section.contacts .social .youtube {
-  -webkit-mask-image: url("../img/socials/youtube.svg");
-  mask-image: url("../img/socials/youtube.svg");
-}
-section.contacts .social .youtube:hover {
-  background-color: #f00;
-}
-section.contacts .social .instagram {
-  -webkit-mask-image: url("../img/socials/instagram.svg");
-  mask-image: url("../img/socials/instagram.svg");
-}
-section.contacts .social .instagram:hover {
-  background-color: #e4405f;
-}
-section.contacts .social .facebook {
-  -webkit-mask-image: url("../img/socials/facebook.svg");
-  mask-image: url("../img/socials/facebook.svg");
-}
-section.contacts .social .facebook:hover {
-  background-color: #1877f2;
 }
 header .navbar {
   display: flex;
@@ -526,6 +575,81 @@ main.gallery section.gallery .outlined-button {
 @media (max-width: 700px) {
   main.gallery section.gallery .gallery__wrapper {
     grid-template-columns: 1fr;
+  }
+}
+main.team > section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  padding: 5%;
+  justify-content: center;
+}
+main.team > section img {
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+main.team section.info > p {
+  font-size: 3vw;
+}
+main.team section.team {
+  background-color: #3c3562;
+}
+main.team section.team .card-list {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 20px;
+}
+main.team section.team .card-list .player-card {
+  position: relative;
+  display: flex;
+  text-decoration: none;
+  padding: 20px;
+  background-color: #272b37;
+  align-items: center;
+}
+main.team section.team .card-list .player-card .socials {
+  display: flex;
+  gap: 5%;
+  justify-self: end;
+}
+main.team section.team .card-list .player-card__role-img {
+  height: 10vw;
+}
+main.team section.team .card-list .player-card__info {
+  width: 30%;
+  font-family: 'Montserrat Bold', sans-serif;
+  font-weight: 700;
+}
+main.team section.team .card-list .player-card__info > p {
+  font-size: 1.6rem;
+}
+main.team section.team .card-list .player-card__info p {
+  display: inline;
+}
+main.team section.team .card-list .player-card__info .role {
+  font-size: 1.3rem;
+  white-space: nowrap;
+  font-family: 'Montserrat Regular', sans-serif;
+  font-weight: 400;
+}
+main.team section.team .socials {
+  position: absolute;
+  right: 5%;
+}
+main.team section.team .socials a {
+  display: block;
+  background: #fff;
+  height: 4vw;
+  width: 4vw;
+}
+@media (max-width: 600px) {
+  main.team section.team .card-list .player-card__info > p {
+    font-size: 1.2rem;
+  }
+  .card-list .player-card .socials {
+    flex-direction: column;
   }
 }
 hr {

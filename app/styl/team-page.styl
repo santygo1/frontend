@@ -1,0 +1,61 @@
+main.team > section
+	block()
+
+main.team
+	section.info > p
+		font-size 3vw
+	section.team
+		background-color $purple-block
+		.card-list
+			display flex
+			width 100%
+			flex-direction column
+			gap 20px 
+			.player-card
+				position relative
+				display flex
+				text-decoration none
+				padding 20px
+				background-color $player-card
+				align-items center
+				.socials
+					display flex
+					gap 5%
+					justify-self end
+				&__role-img
+					height 10vw
+				&__info
+					width 30%
+					font-family 'Montserrat Bold', sans-serif
+					font-weight 700
+					& > p
+						font-size 1.6rem
+					p
+						display inline
+					.role
+						font-size 1.3rem
+						white-space nowrap
+						font-family 'Montserrat Regular', sans-serif
+						font-weight 400
+
+					
+		.socials
+			position absolute
+			right 5%
+			a
+				display block
+				background white
+				height 4vw
+				width 4vw
+@media(max-width: 600px)
+	main.team
+		section.team
+			.card-list
+				.player-card
+					&__info
+						& > p 
+							font-size 1.2rem
+	.card-list
+		.player-card
+			.socials
+				flex-direction column
