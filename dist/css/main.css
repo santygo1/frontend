@@ -1,14 +1,14 @@
 @font-face {
   font-family: 'Montserrat Bold';
-  src: url("fonts/Montserrat-Bold.ttf") format('truetype');
+  src: url("../fonts/Montserrat-Bold.ttf") format('truetype');
 }
 @font-face {
   font-family: 'Montserrat Light';
-  src: url("fonts/Montserrat-Light.ttf") format('truetype');
+  src: url("../fonts/Montserrat-Light.ttf") format('truetype');
 }
 @font-face {
   font-family: 'Montserrat Regular';
-  src: url("fonts/Montserrat-Regular.ttf") format('truetype');
+  src: url("../fonts/Montserrat-Regular.ttf") format('truetype');
 }
 * a.telegram,
 main.team .socials a.telegram,
@@ -231,6 +231,9 @@ section.contacts .social div:not(:last-child):after {
   height: 2px;
   background: #656565;
   margin-left: 10px;
+}
+header .active-menu-item {
+  background: #f00;
 }
 header .navbar {
   display: flex;
@@ -652,7 +655,7 @@ main.team section.team .socials a {
     flex-direction: column;
   }
 }
-main.games > section {
+main.games > section:not(:first-child) {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -660,7 +663,7 @@ main.games > section {
   padding: 5%;
   justify-content: center;
 }
-main.games > section img {
+main.games > section:not(:first-child) img {
   -o-object-fit: cover;
   object-fit: cover;
 }
@@ -713,6 +716,227 @@ div.past-games table .lost {
 div.past-games table .won {
   color: #24ff00;
 }
+section.upcomming-mathces h1.title {
+  padding: 30px 5%;
+}
+section.upcomming-mathces .game0 {
+  background: #bfc203;
+}
+section.upcomming-mathces .game1 {
+  background: #009696;
+}
+section.upcomming-mathces .game2 {
+  background: #930096;
+}
+section.upcomming-mathces .game {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10%;
+  align-items: center;
+}
+section.upcomming-mathces .game div.vs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10% 5%;
+}
+section.upcomming-mathces .game div.vs h1.title {
+  line-height: 1rem;
+}
+section.upcomming-mathces .game div.vs p.date {
+  font-size: 1rem;
+}
+section.upcomming-mathces .game .team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 35%;
+}
+section.upcomming-mathces .game .team .team-title {
+  text-transform: uppercase;
+  font-size: 5vw;
+  white-space: nowrap;
+  font-weight: bold;
+}
+section.upcomming-mathces .game .team img {
+  height: 20vw;
+  width: 20vw;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+section.past-games div.past-games {
+  margin-top: -30px;
+}
+section.past-games div.past-games__title {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+section.past-games div.past-games__title h1.title {
+  white-space: nowrap;
+}
+section.past-games div.past-games__title .buttons_wrapper {
+  display: flex;
+  flex-wrap: no-wrap;
+}
+section.past-games div.past-games__title .buttons_wrapper button {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background: transparent;
+  border: transparent;
+}
+section.past-games div.past-games__title .buttons_wrapper button:hover {
+  transition: all 0.3s ease;
+  background-color: rgba(255,255,255,0.5);
+  cursor: pointer;
+}
+section.past-games div.past-games__title .buttons_wrapper button:active {
+  transition: all 0.3s ease;
+  background-color: rgba(255,255,255,0.7);
+}
+section.past-games div.past-games__title button.btn-check {
+  background: #fff;
+}
+section.past-games div.past-games__title button.btn-check div {
+  background: #000;
+}
+section.past-games details {
+  display: none;
+}
+section.past-games details summary {
+  list-style: none;
+}
+section.past-games h1.title {
+  line-height: 3.5rem;
+}
+section.past-games .table-actions {
+  margin-top: -30px;
+}
+section.past-games .table-actions details {
+  padding: 5px 0 5px 0;
+}
+section.past-games .table-actions details p.details_title {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+section.past-games .table-actions details hr {
+  margin-top: 10px;
+  background-color: #e6e6e6;
+  height: 0.05px;
+}
+section.past-games .table-actions details input[type="reset"],
+section.past-games .table-actions details input[type="submit"] {
+  cursor: pointer;
+  margin-top: 20px;
+  padding: 10px 30px;
+  border-radius: 0;
+  background: transparent;
+  border: solid 1px #fff;
+  margin-right: 0;
+  color: #fff;
+}
+section.past-games .table-actions details input[type="reset"]:hover,
+section.past-games .table-actions details input[type="submit"]:hover {
+  transition: all 0.3s ease;
+  background: #fff;
+  color: #000;
+}
+section.past-games .table-actions details input[type="reset"]:active,
+section.past-games .table-actions details input[type="submit"]:active {
+  background: #999;
+}
+section.past-games .table-actions #graph table {
+  max-width: 500px;
+}
+section.past-games .table-actions #graph table tr:not(:first-child) {
+  margin-top: 10px;
+  padding: 10px;
+  border-top: solid 1px #fff;
+}
+section.past-games .table-actions #graph table tr {
+  display: flex;
+  gap: 60px;
+  justify-content: space-between;
+  position: relative;
+}
+section.past-games .table-actions #graph table tr th:not(:first-child) {
+  padding-right: 30px;
+}
+section.past-games .table-actions #graph table tr td:not(:first-child) {
+  padding-top: 10px;
+}
+section.past-games .table-actions #graph table tr td:not(:first-child):before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 60%;
+  width: 1px;
+  height: 100%;
+  background-color: #fff;
+}
+section.past-games .table-actions #graph table input[type="radio"],
+section.past-games .table-actions #graph table input[type="checkbox"] {
+  margin-right: 10px;
+}
+section.past-games .table-actions #filter select {
+  width: 200px;
+}
+section.past-games .table-actions #filter .params {
+  padding-top: 20px;
+  max-width: 500px;
+  display: grid;
+  row-gap: 10px;
+  align-item: center;
+  grid-template-columns: 3fr 2fr 1fr 2fr;
+}
+section.past-games .table-actions #filter .params :nth-child(3),
+section.past-games .table-actions #filter .params :nth-child(7),
+section.past-games .table-actions #filter .params :nth-child(11),
+section.past-games .table-actions #filter .params :nth-child(15),
+section.past-games .table-actions #filter .params :nth-child(19),
+section.past-games .table-actions #filter .params :nth-child(23),
+section.past-games .table-actions #filter .params :nth-child(27) {
+  text-align: center;
+}
+section.past-games .table-actions #sort form {
+  max-width: 500px;
+  display: grid;
+  row-gap: 10px;
+  grid-template-columns: 2fr 1fr 2fr 1fr;
+}
+section.past-games .table-actions #sort form p.level {
+  font-size: 1rem;
+}
+section.past-games .table-actions #sort form :nth-child(3),
+section.past-games .table-actions #sort form :nth-child(7),
+section.past-games .table-actions #sort form :nth-child(11) {
+  text-align: center;
+}
+.graph-icon,
+.filter-icon,
+.sort-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+}
+.graph-icon {
+  -webkit-mask-image: url("../img/icons/graph.svg");
+  mask-image: url("../img/icons/graph.svg");
+}
+.filter-icon {
+  -webkit-mask-image: url("../img/icons/filter.svg");
+  mask-image: url("../img/icons/filter.svg");
+}
+.sort-icon {
+  -webkit-mask-image: url("../img/icons/sort.svg");
+  mask-image: url("../img/icons/sort.svg");
+}
 @media (max-width: 800px) {
   div.past-games table .head td span {
     transition: all 0.3s ease;
@@ -758,6 +982,19 @@ div.past-games table .won {
   }
 }
 @media (max-width: 600px) {
+  section.past-games .table-actions #sort form {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+  section.past-games .table-actions #sort form label {
+    display: none;
+  }
+  section.past-games .table-actions #sort form input[type="checkbox"]:before {
+    content: "\2193";
+    display: inline-block;
+    color: #fff;
+    position: relative;
+    left: 30%;
+  }
   div.past-games table tr:not(:first-child):nth-child(n) {
     background-color: rgba(0,0,0,0.2);
     margin-top: 20px;
@@ -901,13 +1138,13 @@ body {
   font-family: 'Montserrat Regular', sans-serif;
 }
 h1.title {
-  font-size: 5rem;
+  font-size: 4rem;
   font-family: 'Montserrat Bold', sans-serif;
   text-transform: uppercase;
 }
 p,
 a {
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 a {
   color: #fff;
@@ -919,7 +1156,7 @@ a:hover {
   color: #000;
 }
 p.caption {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 .outlined-button {
   display: flex;
@@ -953,6 +1190,6 @@ p.caption {
 }
 @media (max-width: 1000px) {
   h1.title {
-    font-size: 8vw;
+    font-size: 6vw;
   }
 }

@@ -1,4 +1,4 @@
-main.games > section 
+main.games > section:not(:first-child)
 	block() 
 
 div.past-games
@@ -47,7 +47,189 @@ div.past-games
 			color $lost
 		.won
 			color $won
+section.upcomming-mathces
+	h1.title
+		padding 30px 5%
+	.game0
+		background $first-match
+	.game1
+		background $second-match
+	.game2
+		background $third-match
+		
+	.game
+		display flex
+		justify-content space-between
+		padding 20px 10%
+		align-items center
+		div.vs
+			h1.title
+				line-height 1rem
+			p.date
+				font-size 1rem
+			display flex
+			flex-direction column
+			align-items center
+			padding 10% 5%
+		.team
+			display flex
+			flex-direction column
+			align-items center
+			justify-content center
+			min-width 35%
+			.team-title
+				text-transform uppercase
+				font-size 5vw
+				white-space nowrap
+				font-weight bold
+			img
+				height 20vw
+				width 20vw
+				object-fit contain
+		
+section.past-games
+	div.past-games
+		margin-top -30px
+		&__title
+			h1.title
+				white-space nowrap
+			display flex
+			width 100%
+			align-items center
+			justify-content space-between
+			flex-wrap wrap
+			.buttons_wrapper
+				display flex
+				flex-wrap no-wrap
+				button
+					display inline-block
+					height 40px
+					width 40px
+					background transparent
+					border transparent
+				button:hover
+					tr()
+					background-color rgba(255,255,255, 0.5)
+					cursor pointer
+				button:active
+					tr()
+					background-color rgba(255,255,255, 0.7)
+			button.btn-check
+				background white
+				div
+					background black
+	details
+		display none
+		summary
+			list-style none
+	h1.title
+		line-height 3.5rem
+	.table-actions
+		//- fix gap
+		margin-top -30px
+		details
+			p.details_title
+				margin-bottom 10px
+				font-weight bold
+			padding 5px 0 5px 0
+			hr
+				margin-top 10px
+				background-color darken(white,10)
+				height 0.05px
+			input[type="reset"]
+			input[type="submit"]
+				cursor pointer
+				margin-top 20px
+				padding 10px 30px
+				border-radius 0
+				background transparent
+				border solid 1px white
+				margin-right 0
+				color white
+				&:hover
+					tr()
+					background white
+					color black
+				&:active
+					background darken(white, 40)
+			
+		#graph
+			table
+				max-width 500px
+				tr:not(:first-child)
+					margin-top 10px
+					padding 10px
+					border-top solid 1px white					
+				tr
+					display flex
+					gap 60px
+					justify-content space-between
+					position relative
+					th:not(:first-child)
+						padding-right 30px
+					td:not(:first-child)
+						padding-top 10px
+						&:before
+							content:""
+							position absolute
+							display inline-block
+							top 0
+							left 60%
+							width 1px
+							height 100%
+							background-color white
+				input[type="radio"]
+				input[type="checkbox"]
+					margin-right 10px
+	
+		#filter
+			select
+				width 200px
+			.params
+				padding-top 20px
+				max-width 500px
+				display grid
+				row-gap 10px
+				align-item center
+				grid-template-columns 3fr 2fr 1fr 2fr
+				:nth-child(3)
+				:nth-child(7)
+				:nth-child(11)
+				:nth-child(15)
+				:nth-child(19)
+				:nth-child(23)
+				:nth-child(27)
+					text-align center
+		#sort
+			form
+				max-width 500px
+				display grid
+				p.level
+					font-size 1rem
+				row-gap 10px
+				grid-template-columns 2fr 1fr 2fr 1fr
+				:nth-child(3)
+				:nth-child(7)
+				:nth-child(11)
+					text-align center
+			
+				
+.graph-icon
+.filter-icon
+.sort-icon
+	display inline-block
+	width 20px
+	height 20px
+	background-color white
+	
+.graph-icon
+	mask-image url('../img/icons/graph.svg')
+.filter-icon
+	mask-image url('../img/icons/filter.svg')
+.sort-icon
+	mask-image url('../img/icons/sort.svg')	
 
+	
 @media(max-width 800px)
 	div.past-games
 		table
@@ -88,6 +270,19 @@ div.past-games
 						tr()
 						display none
 @media(max-width 600px)
+	section.past-games
+		.table-actions
+			#sort
+				form
+					grid-template-columns 2fr 1fr 1fr
+					label
+						display none
+					input[type="checkbox"]:before 
+						content "\2193"
+						display inline-block
+						color white
+						position relative
+						left 30%
 	
 	div.past-games
 		table

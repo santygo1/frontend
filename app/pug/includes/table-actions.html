@@ -1,0 +1,178 @@
+<div class="table-actions">
+	<details id="graph">
+		<summary></summary>
+		<p class="details_title">График</p>
+		<form method="GET">
+			<table>
+       				<tr>
+            			<th>Значениe по оси OX</th>
+            			<th>Результат</th>
+        			</tr>
+        			<tr>
+                		<td>
+                    		<input type="radio" name="ox" value="0">Турнир<br>
+                    		<input type="radio" name="ox" value="1">Дата<br>
+                    		<input type="radio" name="ox" value="2">Команда 1<br>
+                    		<input type="radio" name="ox" value="3">Команда 2<br>
+                		</td>
+                		<td>
+                    		<input type="checkbox" name="oy" value="0">Убийства<br>
+                    		<input type="checkbox" name="oy" value="1">Смерти<br>
+                    		<input type="checkbox" name="oy" value="2">Помощь<br>
+                		</td>
+        			</tr>
+    		</table>
+    		<div class="graph-action">
+				<input type="submit" value="Построить">
+				<input type="reset" value="Сбросить">
+			</div>
+		</form>
+		<hr/>
+	</details>
+
+	<details id="filter">
+		<summary></summary>
+		<p class="details_title">Фильтр</p>
+		<form method="GET">
+			<div class="tournament-wrapper">
+				<select name="tournament-selector">
+					<option selected value="none">Выберите турнир</option>
+					<option value="esl-one">ESL ONE</option>
+					<option value="fel">FEL</option>
+					<option value="esea">ESEA</option>
+				</select>
+			</div>
+
+			<div class="first-team-wrapper">
+				<select name="first-team-selector">
+					<option selected value="none">Выберите команду 1</option>
+					<option value="fnatic">fnatic</option>
+					<option value="gambit">gambit</option>
+					<option value="sk-gaming">sk gaming</option>
+					<option value="mouzsport">mouzsport</option>
+				</select>
+			</div>
+
+			<div class="second-team-wrapper">
+				<select name="second-team-selector">
+					<option selected value="none">Выберите команду 2</option>
+					<option value="fnatic">fnatic</option>
+					<option value="gambit">gambit</option>
+					<option value="sk-gaming">sk gaming</option>
+					<option value="mouzsport">mouzsport</option>
+				</select>
+			</div>
+
+			<div class="params">
+				<label for="game-start">Дата от</label>
+				<input type="date" name="game-start" min="2000-01-01" max="2022-12-31">
+
+				<label for="game-end">до</label>
+				<input type="date" name="game-end" min="2000-01-01" max="2022-12-31">
+
+				<label for="kills-start">Убийства от</label>
+				<input type="number" name="kills-start" min="0" max="999">
+
+				<label for="kills-end">до</label>
+				<input type="number" name="kills-end" min="0" max="999">
+
+				<label for="dies-start">Смерти от</label>
+				<input type="number" name="dies-start" min="0" max="999">
+
+				<label for="dies-end">до</label>
+				<input type="number" name="dies-end" min="0" max="999">
+
+				<label for="helps-start">Помощь от</label>
+				<input type="number" name="helps-start" min="0" max="999">
+
+				<label for="helps-end">до</label>
+				<input type="number" name="helps-end" min="0" max="999">
+			
+				<label for="five-kills-start">5 убийств от</label>
+				<input type="number" name="five-kills-start" min="0" max="100">
+
+				<label for="five-kills-end">до</label>
+				<input type="number" name="five-kills-end" min="0" max="100">
+			
+				<label for="four-kills-start">4 убийств от</label>
+				<input type="number" name="four-kills-start" min="0" max="100">
+
+				<label for="four-kills-end">до</label>
+				<input type="number" name="four-kills-end" min="0" max="100">
+			
+				<label for="three-kills-start">3 убийств от</label>
+				<input type="number" name="three-kills-start" min="0" max="100">
+
+				<label for="three-kills-end">до</label>
+				<input type="number" name="three-kills-end" min="0" max="100">
+			</div>
+
+			<div class="filter-action">
+				<input type="submit" value="Фильтр">
+				<input type="reset" value="Сбросить">
+			</div>
+		</form>
+		<hr/>
+	</details>
+
+	<details id="sort" >
+		<summary></summary>
+		<p class="details_title">Сортировка</p>
+		<form method="GET" name="sort-form" id="sort-form">
+				<p class="level">Первый уровень:</p>
+				<select name="first-level-sort">
+					<option value="none" selected>Нет</option>
+					<option value="tournament">Турнир</option>
+					<option value="date">Дата</option>
+					<option value="first-team">Команда 1</option>
+					<option value="second-team">Команда 2</option>
+					<option value="kills">Убийства</option>
+					<option value="dies">Смерти</option>
+					<option value="helps">Помощь</option>
+					<option value="five-kills">5 убийств</option>
+					<option value="four-kills">4 убийства</option>
+					<option value="three-kills">3 убийства</option>
+				</select>
+				<label for="descending"> по убыванию</label>
+				<input type="checkbox" name="descending">
+
+				<p class="level">Второй уровень:</p>
+				<select name="second-level-sort">
+					<option value="none" selected>Нет</option>
+					<option value="tournament">Турнир</option>
+					<option value="date">Дата</option>
+					<option value="first-team">Команда 1</option>
+					<option value="second-team">Команда 2</option>
+					<option value="kills">Убийства</option>
+					<option value="dies">Смерти</option>
+					<option value="helps">Помощь</option>
+					<option value="five-kills">5 убийств</option>
+					<option value="four-kills">4 убийства</option>
+					<option value="three-kills">3 убийства</option>
+				</select>
+				<label for="descending"> по убыванию</label>
+				<input type="checkbox" name="descending">
+
+				<p class="level">Третий уровень:</p>
+				<select name="third-level-sort">
+					<option value="none" selected>Нет</option>
+					<option value="tournament">Турнир</option>
+					<option value="date">Дата</option>
+					<option value="first-team">Команда 1</option>
+					<option value="second-team">Команда 2</option>
+					<option value="kills">Убийства</option>
+					<option value="dies">Смерти</option>
+					<option value="helps">Помощь</option>
+					<option value="five-kills">5 убийств</option>
+					<option value="four-kills">4 убийства</option>
+					<option value="three-kills">3 убийства</option>
+				</select>
+				<label for="descending"> по убыванию</label>
+				<input type="checkbox" name="descending">
+		</form>
+			<div>
+				<input form="sort-form" type="submit" value="Сортировать">
+				<input form="sort-form" type="reset" value="Сбросить">
+			</div>
+	</details>
+</div>

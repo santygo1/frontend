@@ -3,7 +3,47 @@ append page-config
 	- var title = 'Матчи'
 
 block content
+	-
+		var upcoming_matches = [{
+			first_team: 'sk gaming',
+			second_team: 'fnatic',
+			date: '21.06.2023'
+		},
+		{
+			first_team: 'sk gaming',
+			second_team: 'gambit',
+			date: '21.06.2023'
+		},
+		{
+			first_team: 'sk gaming',
+			second_team: 'navi',
+			date: '21.06.2023'
+		}] 
 	main.games
 		section.upcomming-mathces
+			h1.title Предстоящие матчи
+			each val, index in upcoming_matches
+				div.game(class="game"+index)
+					div.team
+						img(src="img/teams/"+val.first_team+".png")
+						p.team-title #{val.first_team}
+					div.vs
+						h1.title VS.
+						p.date #{val.date}
+					div.team
+						img(src="img/teams/"+val.second_team+".png")
+						p.team-title #{val.second_team}
+
 		section.past-games
+			.past-games__title
+				h1.title Прошедшие матчи
+				div.buttons_wrapper
+					button#filter-btn(onClick="openDetails('filter');")
+						.filter-icon
+					button#graph-btn(onClick="openDetails('graph');")
+						.graph-icon
+					button#sort-btn(onClick="openDetails('sort');")
+						.sort-icon
+			include includes/table-actions.html
 			include includes/genereted-table.html
+			script(src="js/details.js")

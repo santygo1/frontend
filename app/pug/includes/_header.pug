@@ -1,10 +1,28 @@
+-
+	var site_map =[
+		{
+			title: 'Команда',
+			active: false,
+			href: "team.html"
+		},
+		{
+			title: 'Матчи',
+			href: "games.html"
+		},
+		{
+			title: 'Фото',
+			href: "gallery.html"
+		},
+		{
+			title: 'О клубе',
+			href: "about.html"
+		}
+		]
 //- Навигационное меню
 header
 	nav.navbar
 		.logo
 			a(href="."): img(src="img/logo.png")
 		ul
-			li: a(href="team.html") Команда
-			li: a(href="games.html") Матчи
-			li: a(href="gallery.html") Фото
-			li: a(href="about.html") О клубе
+			each item in site_map
+				li: a(href=item.href) #{item.title}
