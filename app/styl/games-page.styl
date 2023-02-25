@@ -1,0 +1,202 @@
+main.games > section 
+	block() 
+
+div.past-games
+	table
+		display flex
+		flex-direction column
+		tr
+			display grid
+			grid-template-columns repeat(2, 8%) 14% repeat(2, 4%) 14% repeat(6, 8%)
+			align-items center
+			justify-items center
+			
+		border-collapse collapse
+		width 100%
+		text-align center
+		font-family 'Montserrat Bold', sans-serif
+		font-weight bold
+		font-size 0.6rem
+		span.team
+			white-space nowrap
+		tr:not(:first-child):nth-child(even)
+			background-color rgba(0,0,0,0.1)
+
+		td
+			padding 10px 5px
+
+		tr
+			.head td:nth-child(3)
+			td:nth-child(3)
+				justify-self end
+				display flex
+				justify-content center
+				flex-direction row-reverse
+				gap 1.95px
+				align-items center
+				
+			.head td:nth-child(6)
+			td:nth-child(6)
+				justify-self start
+		
+		img
+			vertical-align middle
+			width 20px
+			height 20px
+		.lost
+			color $lost
+		.won
+			color $won
+
+@media(max-width 800px)
+	div.past-games
+		table
+			.head
+				td
+					span
+						tr()
+						display none
+				td:nth-child(n):after
+					content ""
+					background-size 100% 100%
+					display inline-block
+					background-position 50% 50%
+					background-repeat no-repeat
+					height 12px
+					width 12px
+					
+				td:nth-child(1):after
+					background-image url("../img/table/cup.svg")
+				td:nth-child(2):after
+					content "Дата"
+				td:nth-child(7):after
+					background-image url("../img/table/death.svg")
+				td:nth-child(8):after
+					background-image url("../img/table/help.svg")
+				td:nth-child(9):after
+					background-image url("../img/table/target.svg")
+				td:nth-child(10):after
+					content "3 уб."
+				td:nth-child(11):after
+					content "4 уб."
+				td:nth-child(12):after
+					content "5 уб."
+								
+				td:nth-child(3)
+				td:nth-child(6)
+					span.team
+						tr()
+						display none
+@media(max-width 600px)
+	
+	div.past-games
+		table
+			tr:not(:first-child):nth-child(n)
+				background-color rgba(0,0,0,0.2)
+				margin-top 20px
+			tr
+				padding 5%
+				position relative
+				&:after
+					position absolute
+					content ":"
+					font-size 1rem
+					top 51%
+					right 49%
+					
+				grid-template-areas:
+				"A A A A A A"\
+				"B B B B B B"\
+				"M C D E F N"\
+				"J J G G K K"\
+				"L L O O P P"
+				justify-content stretch
+				grid-template-columns unset
+				
+				
+				td:nth-child(n)
+					justify-self stretch
+					align-self center
+				td:nth-child(1)
+					grid-area A
+					background rgba(0,0,0,0.2)
+					img
+						width 50px
+						height 50px
+				td:nth-child(2)
+					margin-top 10px
+					grid-area B
+				td:nth-child(3)
+					grid-area C
+					img
+						height 60px
+						width 60px
+				td:nth-child(4)
+					grid-area D
+					font-size 1rem
+				td:nth-child(5)
+					grid-area E
+					font-size 1rem
+				td:nth-child(6)
+					grid-area F
+					img
+						height 60px
+						width 60px
+				td:nth-child(7)
+					grid-area J
+					margin-top 20px
+					position relative
+					left 5px
+					&:before
+						position absolute
+						left 30%
+						content ''
+						background-image url('../img/table/target.svg')
+						display inline-block
+						width 10px
+						height 10px
+				td:nth-child(8)
+					grid-area G
+					position relative
+					left 5px
+					margin-top 20px
+					&:before
+						position absolute
+						left 25%
+						content ''
+						background-image url('../img/table/death.svg')
+						display inline-block
+						width 10px
+						height 10px
+				td:nth-child(9)
+					grid-area K
+					position relative
+					margin-top 20px
+					left 5px
+					&:before
+						position absolute
+						left 30%
+						content ''
+						background-image url('../img/table/help.svg')
+						display inline-block
+						width 10px
+						height 10px
+				td:nth-child(10)
+					grid-area L
+					&:before
+						content '3 уб: '
+				td:nth-child(11)
+					grid-area O
+					&:before
+						content '4 уб: '
+				td:nth-child(12)
+					grid-area P
+					&:before
+						content '5 уб: '
+				
+			.head
+				display none
+			tr
+				td
+					span.team
+						display none

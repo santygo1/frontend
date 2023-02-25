@@ -1,0 +1,9 @@
+extends includes/basis
+append page-config
+	- var title = 'Матчи'
+
+block content
+	main.games
+		section.upcomming-mathces
+		section.past-games
+			include includes/genereted-table.html
